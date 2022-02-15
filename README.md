@@ -8,16 +8,23 @@ This project is a simple setup of react and rails. React is used for the fronten
 
 ## Getting Started
 
-
 - **To get a local copy of the repository please run the following commands on your terminal:**
    - `git clone https://github.com/mmsesay/hello-rails-react.git`
    - `cd hello-rails-react`
    - `bundle install` to couple all dependacies
    - `npm install` to install all node packages
 
+- **Make sure you do have a database installed locally (Postgresql or any other)**
+  - After cloning the project:
+    - Goto `config` directory
+    - Open the `database.yml` file
+    - Swap the `username` and `password` on line `27 & 28` to match your database credentials
+
+- **Run the application**
    ** Please run both commands on separate terminals **
    - `./bin/webpack-dev-server` to start the react application
    - `rails s` to start the rails application
+  
 
 
 👤 **Muhammad Sesay**
