@@ -14,7 +14,7 @@ const App = () => {
       <Router>
         <Switch>
           <Route path="/" >
-            <Greeting greeting={"Its working fine bro"} />
+            <Greeting />
           </Route>
         </Switch>
       </Router>
