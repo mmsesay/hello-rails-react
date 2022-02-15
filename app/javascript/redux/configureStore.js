@@ -1,17 +1,13 @@
-import { createStore } from "redux"
+import { createStore, combineReducers } from "redux"
+import { greetReducer } from './greet';
 
-const initialState = {
-  messages: []
-};
+const reducers = combineReducers({
+  greetReducer
+});
 
-const rootReducer = (state, action) => {
-  console.log(action.type);
-  switch(action.type) {
-    default:
-      return state;
-  }
-}
+const store = createStore(
+  reducers,
+  // applyMiddleware(logger, thunk),
+);
 
-export const configureStore = () => {
-  return store = createStore(rootReducer, initialState);
-}
+export default store;
