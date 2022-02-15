@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getMessagesAction } from '../redux/greet';
+import { getMessagesAction, getMessageSuccessAction } from '../redux/greet';
 
 
 const Greeting = () => {
@@ -11,10 +11,19 @@ const Greeting = () => {
     return <li>{response.message}</li>;
   });
 
+  const performAction = () => {
+    dispatch(getMessagesAction());
+
+    fetch('v1/greeting.json')
+    .then((response) => response.json())
+    .then((data) => dispatch(getMessageSuccessAction(data)))
+    .catch((error) => console.log(error));
+  }
+
   return (
     <div>
       Greeting: 
-      <button onClick={() => dispatch(getMessagesAction())}>Get Messages</button>
+      <button onClick={() => performAction()}>Get Messages</button>
       <br />
       <ul>
        { messages }

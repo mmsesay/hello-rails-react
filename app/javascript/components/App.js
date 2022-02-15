@@ -5,8 +5,6 @@ import store from "../redux/configureStore";
 import Greeting from './Greeting';
 
 
-// const store = configureStore();
-
 const App = () => {
 
   return (
